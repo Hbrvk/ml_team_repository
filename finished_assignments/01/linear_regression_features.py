@@ -10,7 +10,7 @@
 #
 # Denis Šmerda
 # e198bace-6fb1-43c6-8a4e-403d47252059
-# Shtanko Kyrylo 
+# Shtanko Kyrylo
 # 5f81d778-9180-44aa-bf06-f6750bd0cead
 # Hulianskyi Oleksandr
 # 2e4b040f-8cc3-4418-876c-6364f010b60b
