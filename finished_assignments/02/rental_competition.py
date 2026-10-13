@@ -99,10 +99,11 @@ def main(args: argparse.Namespace) -> Optional[npt.ArrayLike]:
         np.random.seed(args.seed)
         train = Dataset()
 
-        data_train = train.data
+        data_train = oneHotFeatures(train.data)
         target_train = train.target
+        alpha = 0.05 #found it in my sandbox as we did in the homework
 
-        model = sklearn.linear_model.LinearRegression()
+        model = sklearn.linear_model.Ridge(alpha=alpha)
         model.fit(data_train, target_train)
 
         # Serialize the model.
@@ -113,7 +114,7 @@ def main(args: argparse.Namespace) -> Optional[npt.ArrayLike]:
         # Use the model and return test set predictions, either as a Python list or a NumPy array.
         test = Dataset(args.predict)
 
-        data_test = test.data
+        data_test = oneHotFeatures(test.data)
 
         with lzma.open(args.model_path, "rb") as model_file:
             model = pickle.load(model_file)
