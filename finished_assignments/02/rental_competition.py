@@ -68,7 +68,30 @@ class Dataset:
         for key, value in dataset.items():
             setattr(self, key, value)
 
+def oneHotFeatures(X):
+        hour = X[:, 3].astype(int)
+        hour_one_hot = np.eye(24)[hour]
 
+        month = X[:, 2].astype(int)
+        month_one_hot = np.eye(12)[month - 1]
+
+        workingday = X[:, 6:7]
+        hour_workingday = hour_one_hot * workingday
+
+        day = X[:, 5].astype(int)
+        day_one_hot = np.eye(7)[day]
+
+        weather = X[:, 7].astype(int)
+        weather_one_hot = np.eye(4)[weather - 1]
+
+        season = X[:, 0].astype(int)
+        season_one_hot = np.eye(4)[season - 1]
+
+        temp = X[:, 8:9]
+        weather_temp_interaction = weather_one_hot * temp
+
+        X_new = np.column_stack((season_one_hot, X[:, 1:2], month_one_hot, hour_one_hot, hour_workingday,  X[:, 4:5], day_one_hot, X[:, 6:7], weather_one_hot, weather_temp_interaction, X[:,8:]))
+        return X_new
 
 def main(args: argparse.Namespace) -> Optional[npt.ArrayLike]:
     if args.predict is None:
