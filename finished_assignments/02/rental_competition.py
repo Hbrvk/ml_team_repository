@@ -6,7 +6,8 @@ import pickle
 import sys
 from typing import Optional
 import urllib.request
-
+import sklearn.model_selection
+import sklearn.linear_model
 import numpy as np
 import numpy.typing as npt
 
@@ -52,14 +53,18 @@ class Dataset:
             setattr(self, key, value)
 
 
+
 def main(args: argparse.Namespace) -> Optional[npt.ArrayLike]:
     if args.predict is None:
         # We are training a model.
         np.random.seed(args.seed)
         train = Dataset()
 
-        # TODO: Train a model on the given dataset and store it in `model`.
-        model = ...
+        data_train = train.data
+        target_train = train.target
+
+        model = sklearn.linear_model.LinearRegression()
+        model.fit(data_train, target_train)
 
         # Serialize the model.
         with lzma.open(args.model_path, "wb") as model_file:
@@ -69,11 +74,12 @@ def main(args: argparse.Namespace) -> Optional[npt.ArrayLike]:
         # Use the model and return test set predictions, either as a Python list or a NumPy array.
         test = Dataset(args.predict)
 
+        data_test = test.data
+
         with lzma.open(args.model_path, "rb") as model_file:
             model = pickle.load(model_file)
 
-        # TODO: Generate `predictions` with the test set predictions.
-        predictions = ...
+        predictions = model.predict(data_test)
 
         return predictions
 
