@@ -1,4 +1,20 @@
 #!/usr/bin/env python3
+#
+# All team solutions **must** list **all** members of the team.
+# The members must be listed using their ReCodEx IDs anywhere
+# in a comment block in the source file (on a line beginning with `#`).
+#
+# You can find out ReCodEx ID in the URL bar after navigating
+# to your User profile page. The ID has the following format:
+# 01234567-89ab-cdef-0123-456789abcdef.
+#
+# Denis Šmerda
+# e198bace-6fb1-43c6-8a4e-403d47252059
+# Shtanko Kyrylo 
+# 5f81d778-9180-44aa-bf06-f6750bd0cead
+# Hulianskyi Oleksandr
+# 2e4b040f-8cc3-4418-876c-6364f010b60b
+
 import argparse
 
 import numpy as np
