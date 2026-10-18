@@ -13,4 +13,4 @@
 - [ ] engineering
 - [ ] l2
 - [ ] sgd
-- [ ] rental competition
+- [x] rental competition - Kyrylo +3
