@@ -10,7 +10,14 @@
 
 ## Week 2
 
-- [ ] engineering
+- [x] engineering - Kyrylo +3
 - [ ] l2
 - [ ] sgd
 - [x] rental competition - Kyrylo +3
+
+## Week 3
+
+- [ ] grid search
+- [ ] logistic regression sgd
+- [ ] perceptron
+- [ ] thyroid competition
