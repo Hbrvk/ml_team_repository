@@ -11,8 +11,8 @@
 ## Week 2
 
 - [x] engineering - Kyrylo +3
-- [ ] l2
-- [ ] sgd
+- [x] l2 - Alex + 2
+- [x] sgd - Alex + 4
 - [x] rental competition - Kyrylo +3
 
 ## Week 3
