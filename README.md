@@ -21,3 +21,14 @@
 - [ ] logistic regression sgd
 - [ ] perceptron
 - [ ] thyroid competition
+
+## Week 4
+
+- [ ] mnist competition
+- [ ] mlp
+- [ ] softmax
+
+## Week 5
+
+- [ ] multilable
+- [ ] diacritization

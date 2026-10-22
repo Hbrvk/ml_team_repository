@@ -6,7 +6,7 @@
 
 ## Oleksandr
 
-- 6/35
+- 12/35
 
 ## Kyrylo
 
