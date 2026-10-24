@@ -18,7 +18,7 @@
 ## Week 3
 
 - [ ] grid search
-- [ ] logistic regression sgd
+- [x] logistic regression sgd - Denis +5
 - [ ] perceptron
 - [ ] thyroid competition
 

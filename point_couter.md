@@ -2,7 +2,7 @@
 
 ## Denis
 
-- 0/35
+- 5/35
 
 ## Oleksandr
 
