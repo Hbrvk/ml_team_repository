@@ -19,7 +19,7 @@
 
 - [ ] grid search
 - [x] logistic regression sgd - Denis +5
-- [ ] perceptron
+- [x] perceptron - Kyrylo +2
 - [ ] thyroid competition
 
 ## Week 4
