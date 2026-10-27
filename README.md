@@ -17,7 +17,7 @@
 
 ## Week 3
 
-- [ ] grid search
+- [x] grid search - Kyrylo +2
 - [x] logistic regression sgd - Denis +5
 - [x] perceptron - Kyrylo +2
 - [ ] thyroid competition
