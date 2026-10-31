@@ -25,7 +25,7 @@
 ## Week 4
 
 - [ ] mnist competition
-- [ ] mlp
+- [x] mlp
 - [ ] softmax
 
 ## Week 5
