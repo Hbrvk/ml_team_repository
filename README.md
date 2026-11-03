@@ -26,7 +26,7 @@
 
 - [x] mnist competition - Alex +4
 - [x] mlp - Denis +6
-- [ ] softmax - Alex +3
+- [x] softmax - Alex +3
 
 ## Week 5
 
