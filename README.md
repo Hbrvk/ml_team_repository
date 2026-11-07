@@ -32,3 +32,9 @@
 
 - [ ] multilable
 - [ ] diacritization
+
+## Week 6
+
+- [ ] diacritization dictionary
+- [x] if idf - Denis +3
+- [ ] imdb
