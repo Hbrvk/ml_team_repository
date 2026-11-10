@@ -30,8 +30,8 @@
 
 ## Week 5
 
-- [ ] multilable
-- [ ] diacritization
+- [x] multilable - Alex +1, Denis +1
+- [x] diacritization - Kyrylo +5
 
 ## Week 6
 
