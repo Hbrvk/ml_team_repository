@@ -37,4 +37,4 @@
 
 - [ ] diacritization dictionary
 - [x] if idf - Denis +3
-- [ ] imdb
+- [x] imdb - Alex +3
