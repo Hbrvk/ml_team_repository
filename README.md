@@ -35,6 +35,12 @@
 
 ## Week 6
 
-- [ ] diacritization dictionary
+- [x] diacritization dictionary - Kyrylo + 4
 - [x] if idf - Denis +3
 - [x] imdb - Alex +3
+
+## Week 7
+
+- [x] isnt it ironic - Denis + 3
+- [x] k nearest neighbors - Denis + 3
+- [ ] naive bayes
