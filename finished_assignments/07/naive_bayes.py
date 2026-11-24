@@ -38,6 +38,16 @@ parser.add_argument("--seed", default=72, type=int, help="Random seed")
 parser.add_argument("--test_size", default=0.5, type=lambda x: int(x) if x.isdigit() else float(x), help="Test size")
 # If you add more arguments, ReCodEx will keep them with your default values.
 
+def likelihood(x, c, means, variances, feature_probs, args):
+    if args.naive_bayes_type == "gaussian":
+        return np.sum(scipy.stats.norm.logpdf(x,loc=means[c],scale=np.sqrt(variances[c])))
+
+    elif args.naive_bayes_type == "multinomial":
+        return np.sum(x * np.log(feature_probs[c]))
+
+    elif args.naive_bayes_type == "bernoulli":
+        p = feature_probs[c]
+        return np.sum(x * np.log(p) + (1 - x) * np.log(1 - p))
 
 def main(args: argparse.Namespace) -> tuple[float, float]:
     # Load the digits dataset.
@@ -69,6 +79,9 @@ def main(args: argparse.Namespace) -> tuple[float, float]:
     # In all cases, the class prior is the distribution of the train data classes.
     classes = np.unique(train_target)
     prior = {}
+    means = {}
+    variances = {}
+    feature_probs = {}
     for c in classes:
         prior[c] = np.mean(train_target == c)   
 
@@ -94,16 +107,48 @@ def main(args: argparse.Namespace) -> tuple[float, float]:
         for c in classes:
             class_data = train_data[train_target == c]
             feature_counts = np.sum(class_data, axis=0)
-            feature_probs[c] = (feature_counts + args.alpha) / (len(class_data) + 2 * args.alpha)
 
-    # TODO: Predict the test data classes, and compute
-    # - the test set accuracy, and
-    # - the joint log-probability of the test set, i.e.,
-    #     \sum_{(x_i, t_i) \in test set} \log P(x_i, t_i).
-    test_accuracy, test_log_probability = ...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            feature_probs[c] = (feature_counts + args.alpha) / (len(class_data) + 2 * args.alpha)
+    predictions = []
+    for x in test_data:
+        scores = []
+        for c in classes:
+            score = np.log(prior[c])
+            score += likelihood(x, c, means ,variances, feature_probs, args)
+            scores.append(score)
+        predictions.append(classes[np.argmax(scores)])
+    predictions = np.array(predictions)
+    test_accuracy = np.mean(predictions == test_target)
+
+
+    test_log_probability = 0
+
+    for x, c in zip(test_data, test_target):
+        test_log_probability += (np.log(prior[c]) + likelihood(x, c, means,variances, feature_probs, args))
 
     return 100 * test_accuracy, test_log_probability
-
 
 if __name__ == "__main__":
     main_args = parser.parse_args([] if "__file__" not in globals() else None)
